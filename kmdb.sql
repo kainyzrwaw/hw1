@@ -241,6 +241,16 @@ INSERT INTO actors (
     "Anne Hathaway"
 );
 
+INSERT INTO characters (
+    name,
+    movie_id,
+    actor_id
+) VALUES (
+    "Bruce Wayne",
+    "1",
+    "1"
+);
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
