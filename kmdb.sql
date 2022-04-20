@@ -112,7 +112,7 @@ CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT,
   year_released TEXT,
-  MPAA_rating TEXT,
+  mpaa_rating TEXT,
   studio_id TEXT
 );
 
@@ -143,7 +143,7 @@ INSERT INTO studios (
 INSERT INTO movies (
     title,
     year_released,
-    MPAA_rating,
+    mpaa_rating,
     studio_id
 ) VALUES (
     "Batman Begins",
@@ -154,7 +154,7 @@ INSERT INTO movies (
 INSERT INTO movies (
     title,
     year_released,
-    MPAA_rating,
+    mpaa_rating,
     studio_id
 ) VALUES (
     "The Dark Knight",
@@ -166,7 +166,7 @@ INSERT INTO movies (
 INSERT INTO movies (
     title,
     year_released,
-    MPAA_rating,
+    mpaa_rating,
     studio_id
 ) VALUES (
     "The Dark Knight Rises",
@@ -398,6 +398,7 @@ INSERT INTO characters (
 
 -- The SQL statement for the movies output
 -- TODO!
+SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name FROM studios INNER JOIN movies ON movies.studio_id = studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -408,3 +409,4 @@ INSERT INTO characters (
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT movies.title, actors.name, characters.name FROM characters INNER JOIN movies ON movies.id = characters.movie_id INNER JOIN actors ON actors.id = characters.actor_id;
